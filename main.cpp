@@ -2,10 +2,10 @@
 #include <string>
 using namespace std;
 
-class Strategy
+class Car
 {
 public:
-	virtual string DoAlgorithm() const = 0;
+	virtual string use() const = 0;
 };
 
 class Context
@@ -37,28 +37,28 @@ public:
 };
 
 
-class Cash : public Strategy
+class Electricity : public Car
 {
 public:
-	string DoAlgorithm() const override
+	string use() const override
 	{
 		return "Cash payment";
 	}
 };
 
-class Card : public Strategy
+class Gas : public Car
 {
 public:
-	string DoAlgorithm() const override
+	string use() const override
 	{
 		return "Card payment";
 	}
 };
 
-class Error : public Strategy
+class Petrol : public Car
 {
 public:
-	string DoAlgorithm() const override
+	string use() const override
 	{
 		return "Error: invalid data";
 	}
@@ -72,7 +72,7 @@ int main()
 
 	Context* context = new Context();
 
-	if (cost < 5000) context->set_strategy(new Cash);
+	if (cost < 5000) context->set_strategy(new Card);
 	else context->set_strategy(new Card);
 
 	context->DoSomeBusinessLogic();
