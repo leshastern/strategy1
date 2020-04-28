@@ -72,7 +72,7 @@ int main()
 
 	Context* context = new Context();
 
-	if (cost < 5000) aaaaaaaaaaaddddwcccccccwdwwwwwwwwwwwcccccdcccccccccccwww
+	if (cost < 5000) context->set_strategy(new Cash);
 	else context->set_strategy(new Card);
 
 	context->DoSomeBusinessLogic();
