@@ -11,10 +11,10 @@ public:
 class Context
 {
 private:
-	Strategy* strategy_;
+	Car* strategy_;
 	
 public:
-	Context(Strategy* strategy = nullptr) : strategy_(strategy)
+	Context(Car* strategy = nullptr) : strategy_(strategy)
 	{
 	}
 	~Context()
@@ -22,7 +22,7 @@ public:
 		delete this->strategy_;
 	}
 
-	void set_strategy(Strategy* strategy)
+	void set_strategy(Car* strategy)
 	{
 		delete this->strategy_;
 		this->strategy_ = strategy;
@@ -42,7 +42,7 @@ class Electricity : public Car
 public:
 	string use() const override
 	{
-		return "Cash payment";
+		return "Electricity";
 	}
 };
 
@@ -51,7 +51,7 @@ class Gas : public Car
 public:
 	string use() const override
 	{
-		return "Card payment";
+		return "Gas";
 	}
 };
 
@@ -60,20 +60,22 @@ class Petrol : public Car
 public:
 	string use() const override
 	{
-		return "Error: invalid data";
+		return "Petrol";
 	}
 };
 
 int main()
 {
-	int cost;
-	cout << "Enter purchase value\n";
-	cin >> cost;
+	int speed;
+	cout << "Enter speed (km/h)\n";
+	cin >> speed;
 
 	Context* context = new Context();
 
-	if (cost < 5000) context->set_strategy(new Card);
-	else context->set_strategy(new Card);
+	if (speed == 100) context->set_strategy(new Electricity);
+	else if (speed == 200) context->set_strategy(new Gas);
+	else if (speed == 300) context->set_strategy(new Petrol);
+	else cout << "Error: invalid data" << endl;
 
 	context->DoSomeBusinessLogic();
 	delete context;
