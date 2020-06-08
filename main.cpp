@@ -71,7 +71,7 @@ int main()
 	cin >> speed;
         
 	Context* context = new Context();
-	if (speed == 100) context->set_strategy();
+	if (speed == 100) context->set_strategy(new Electricity);
 	else if (speed == 200) context->set_strategy();
 	else if (speed == 300) context->set_strategy();
 	else cout << "Error: invalid data" << endl;
