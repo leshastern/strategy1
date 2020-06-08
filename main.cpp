@@ -77,7 +77,7 @@ int main()
 	else if (speed == 300) context->set_strategy(new Petrol);
 	else cout << "Error: invalid data" << endl;
 
-	context->use();
+	context->DoSomeBusinessLogic();
 	delete context;
 
 	system("PAUSE");
