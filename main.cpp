@@ -37,7 +37,7 @@ public:
 };
 
 
-class Claas : public Car
+class Electricity : public Car
 {
 public:
 	string use() const override
@@ -46,7 +46,7 @@ public:
 	}
 };
 
-class Gas : public Car
+class GDdsds : public Car
 {
 public:
 	string use() const override
@@ -73,8 +73,8 @@ int main()
         cin >> speed;
         
         Context* context = new Context();
-        if (speed == 100) context->set_strategy(new Claas);
-        else if (speed == 200) context->set_strategy(new Gas);
+        if (speed == 100) context->set_strategy(new Electricity);
+        else if (speed == 200) context->set_strategy(new GSDds);
 	else if (speed == 300) context->set_strategy(new Petrol);
         else cout << "Error: invalid data" << endl;
         
