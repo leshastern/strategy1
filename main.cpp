@@ -5,7 +5,7 @@ using namespace std;
 class Car
 {
 public:
-	virtual string deck() const = 0;
+	virtual string use() const = 0;
 };
 
 class Context
@@ -55,14 +55,6 @@ public:
 	}
 };
 
-class Petrol : public Car
-{
-public:
-	string use() const override
-	{
-		return "Petrol";
-	}
-};
 
 int main()
 {
@@ -73,7 +65,6 @@ int main()
         Context* context = new Context();
         if (speed == 100) context->set_strategy(new Electricity);
         else if (speed == 200) context->set_strategy(new Gas);
-        else if (speed == 300) context->set_strategy(new Petrol);
         else cout << "Error: invalid data" << endl;
         
         context->DoSomeBusinessLogic();
