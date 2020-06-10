@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-class Car
+class Cars
 {
 public:
 	virtual string use() const = 0;
