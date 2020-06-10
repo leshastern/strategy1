@@ -2,10 +2,10 @@
 #include <string>
 using namespace std;
 
-class Deck
+class Car
 {
 public:
-	virtual string use() const = 0;
+	virtual string deck() const = 0;
 };
 
 class Context
@@ -37,7 +37,7 @@ public:
 };
 
 
-class Electricity : public Deck
+class Electricity : public Car
 {
 public:
 	string use() const override
@@ -46,7 +46,7 @@ public:
 	}
 };
 
-class Gas : public Deck
+class Gas : public Car
 {
 public:
 	string use() const override
@@ -55,7 +55,7 @@ public:
 	}
 };
 
-class Petrol : public Deck
+class Petrol : public Car
 {
 public:
 	string use() const override
