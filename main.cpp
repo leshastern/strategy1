@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-class Cars
+class Deck
 {
 public:
 	virtual string use() const = 0;
@@ -37,7 +37,7 @@ public:
 };
 
 
-class Electricity : public Car
+class Electricity : public Deck
 {
 public:
 	string use() const override
@@ -46,7 +46,7 @@ public:
 	}
 };
 
-class Gas : public Car
+class Gas : public Deck
 {
 public:
 	string use() const override
@@ -55,7 +55,7 @@ public:
 	}
 };
 
-class Petrol : public Car
+class Petrol : public Deck
 {
 public:
 	string use() const override
